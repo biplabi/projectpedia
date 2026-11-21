@@ -5,17 +5,17 @@ import { formatPrice } from "@/lib/config";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <Link
-      href={`/projects/${project.slug}`}
-      className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-    >
+    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
       <ProjectPoster project={project} />
       <div className="flex flex-1 flex-col gap-3 p-4">
         <span className="w-fit rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs font-medium text-indigo-700">
           {project.domain}
         </span>
         <h3 className="font-semibold leading-snug text-slate-900 group-hover:text-indigo-600">
-          {project.title}
+          {/* Stretched link: the whole card opens the details page */}
+          <Link href={`/projects/${project.slug}`} className="after:absolute after:inset-0">
+            {project.title}
+          </Link>
         </h3>
         <div className="flex flex-wrap gap-1.5">
           {project.techStack.map((tech) => (
@@ -31,11 +31,14 @@ export default function ProjectCard({ project }: { project: Project }) {
           <span className="text-lg font-bold text-slate-900">
             {formatPrice(project.price)}
           </span>
-          <span className="text-sm font-medium text-indigo-600">
-            View details →
-          </span>
+          <Link
+            href={`/projects/${project.slug}/demo`}
+            className="relative z-10 rounded-full bg-indigo-600 px-4 py-1.5 text-sm font-semibold text-white hover:bg-indigo-700"
+          >
+            ▶ Live demo
+          </Link>
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

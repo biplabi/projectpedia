@@ -49,9 +49,18 @@ export default async function ProjectDetailPage({
             {project.title}
           </h1>
 
-          <div className="mt-6 overflow-hidden rounded-2xl shadow-sm">
+          <Link
+            href={`/projects/${project.slug}/demo`}
+            className="group relative mt-6 block overflow-hidden rounded-2xl shadow-sm"
+          >
             <ProjectPoster project={project} />
-          </div>
+            <span className="absolute inset-0 grid place-items-center bg-black/10 transition group-hover:bg-black/25">
+              <span className="flex items-center gap-2 rounded-full bg-white px-5 py-3 font-semibold text-slate-900 shadow-lg transition group-hover:scale-105">
+                <span className="grid h-7 w-7 place-items-center rounded-full bg-indigo-600 text-xs text-white">▶</span>
+                Try live demo
+              </span>
+            </span>
+          </Link>
 
           <h2 className="mt-8 text-xl font-semibold">Abstract</h2>
           <p className="mt-2 leading-relaxed text-slate-700">
@@ -110,11 +119,17 @@ export default async function ProjectDetailPage({
               ))}
             </ul>
 
+            <Link
+              href={`/projects/${project.slug}/demo`}
+              className="mt-6 block w-full rounded-xl px-6 py-3 text-center font-semibold text-indigo-700 ring-2 ring-indigo-600 hover:bg-indigo-50"
+            >
+              ▶ Try live demo
+            </Link>
             <a
               href={contactUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 hidden w-full rounded-xl bg-green-600 px-6 py-4 text-center text-lg font-semibold text-white shadow hover:bg-green-700 sm:block"
+              className="mt-3 hidden w-full rounded-xl bg-green-600 px-6 py-4 text-center text-lg font-semibold text-white shadow hover:bg-green-700 sm:block"
             >
               Contact on WhatsApp
             </a>
