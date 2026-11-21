@@ -18,11 +18,10 @@ export type Project = {
   featured: boolean;
   abstract: string;
   features: string[];
-  image: string;
   screenshots: string[];
 };
 
-// Placeholder images so nothing breaks. Swap for real screenshots later.
+// Placeholder screenshots so nothing breaks. Swap for real screenshots later.
 const DOMAIN_COLORS: Record<Domain, string> = {
   Web: "4f46e5",
   Android: "16a34a",
@@ -66,7 +65,6 @@ export const projects: Project[] = [
       "Bed availability and ward management",
       "Billing with downloadable PDF invoices",
     ],
-    image: placeholder("Hospital Management", "Web"),
     screenshots: screenshots("Web", ["Dashboard", "Appointments", "Billing"]),
   },
   {
@@ -85,7 +83,6 @@ export const projects: Project[] = [
       "Order tracking for customers",
       "Admin panel for products and orders",
     ],
-    image: placeholder("E-Commerce Store", "Web"),
     screenshots: screenshots("Web", ["Home Page", "Product Page", "Admin Panel"]),
   },
   {
@@ -103,7 +100,6 @@ export const projects: Project[] = [
       "Randomised question order per student",
       "Instant results and performance reports",
     ],
-    image: placeholder("Online Exam System", "Web"),
     screenshots: screenshots("Web", ["Exam Screen", "Results", "Teacher Panel"]),
   },
   {
@@ -121,7 +117,6 @@ export const projects: Project[] = [
       "Arrival notifications for selected stop",
       "Route and stop list for every bus",
     ],
-    image: placeholder("Bus Tracking App", "Android"),
     screenshots: screenshots("Android", ["Live Map", "Routes", "Notifications"]),
   },
   {
@@ -139,7 +134,6 @@ export const projects: Project[] = [
       "Budget limits with alerts",
       "Export data to CSV",
     ],
-    image: placeholder("Expense Tracker", "Android"),
     screenshots: screenshots("Android", ["Home", "Charts", "Add Expense"]),
   },
   {
@@ -157,7 +151,6 @@ export const projects: Project[] = [
       "Around 93% accuracy on test data",
       "Flask web app for live predictions",
     ],
-    image: placeholder("Fake News Detection", "Machine Learning"),
     screenshots: screenshots("Machine Learning", ["Web Interface", "Accuracy Graph", "Prediction"]),
   },
   {
@@ -175,7 +168,6 @@ export const projects: Project[] = [
       "Remedy suggestions for each disease",
       "Training graphs and confusion matrix included",
     ],
-    image: placeholder("Plant Disease Detection", "Machine Learning"),
     screenshots: screenshots("Machine Learning", ["Upload Screen", "Prediction", "Training Graph"]),
   },
   {
@@ -193,7 +185,6 @@ export const projects: Project[] = [
       "Scheduling and timers",
       "Manual switch fallback",
     ],
-    image: placeholder("Smart Home Automation", "IoT"),
     screenshots: screenshots("IoT", ["Circuit", "Mobile App", "Hardware Setup"]),
   },
   {
@@ -211,7 +202,6 @@ export const projects: Project[] = [
       "Email alert when pollution crosses a limit",
       "Compact, battery-powered design",
     ],
-    image: placeholder("Air Quality Monitor", "IoT"),
     screenshots: screenshots("IoT", ["Device", "Live Graphs", "Circuit Diagram"]),
   },
   {
@@ -229,7 +219,6 @@ export const projects: Project[] = [
       "Attendance saved to Excel with date and time",
       "Simple desktop GUI built with Tkinter",
     ],
-    image: placeholder("Face Attendance System", "Python"),
     screenshots: screenshots("Python", ["Main Window", "Live Detection", "Attendance Sheet"]),
   },
   {
@@ -247,7 +236,6 @@ export const projects: Project[] = [
       "Automatic late fine calculation",
       "Student and book reports",
     ],
-    image: placeholder("Library Management", "Java"),
     screenshots: screenshots("Java", ["Login", "Book List", "Issue Book"]),
   },
   {
@@ -265,7 +253,6 @@ export const projects: Project[] = [
       "Transaction history and mini statement",
       "Secure login with password encryption",
     ],
-    image: placeholder("Online Banking", "Java"),
     screenshots: screenshots("Java", ["Dashboard", "Fund Transfer", "Statement"]),
   },
 ];

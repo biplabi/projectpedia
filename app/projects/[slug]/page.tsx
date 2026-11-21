@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import ProjectPoster from "@/components/ProjectPoster";
 import { WHAT_YOU_GET, getProject, projects } from "@/data/projects";
 import { formatPrice, whatsappLink } from "@/lib/config";
 
@@ -48,14 +49,9 @@ export default async function ProjectDetailPage({
             {project.title}
           </h1>
 
-          <Image
-            src={project.image}
-            alt={project.title}
-            width={800}
-            height={500}
-            preload
-            className="mt-6 w-full rounded-2xl border border-slate-200"
-          />
+          <div className="mt-6 overflow-hidden rounded-2xl shadow-sm">
+            <ProjectPoster project={project} />
+          </div>
 
           <h2 className="mt-8 text-xl font-semibold">Abstract</h2>
           <p className="mt-2 leading-relaxed text-slate-700">

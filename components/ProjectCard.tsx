@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/data/projects";
+import ProjectPoster from "@/components/ProjectPoster";
 import { formatPrice } from "@/lib/config";
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -9,13 +9,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       href={`/projects/${project.slug}`}
       className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
     >
-      <Image
-        src={project.image}
-        alt={project.title}
-        width={800}
-        height={500}
-        className="aspect-[8/5] w-full object-cover"
-      />
+      <ProjectPoster project={project} />
       <div className="flex flex-1 flex-col gap-3 p-4">
         <span className="w-fit rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs font-medium text-indigo-700">
           {project.domain}
